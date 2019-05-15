@@ -18,9 +18,9 @@ namespace YascPcDcsControls
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class YascPcDcsControl : UserControl
+    public partial class PcDcsControl : UserControl
     {
-        public YascPcDcsControl()
+        public PcDcsControl()
         {
             InitializeComponent();
         }
