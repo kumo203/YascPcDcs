@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YascPcDcsControls\YascPcDcsControls.csproj">
+      <Project>{00CD7EC7-7813-4A0C-9798-A0452052CD9E}</Project>
+      <Name>YascPcDcsControls</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
