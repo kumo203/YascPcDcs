@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:YascPcDcs"
         xmlns:YascPcDcsControls="clr-namespace:YascPcDcsControls;assembly=YascPcDcsControls" x:Class="YascPcDcs.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1600" ResizeMode="NoResize">
+        Title="MainWindow" Height="900" Width="1600" ResizeMode="NoResize" Closing="Window_Closing" Loaded="Window_Loaded">
     <Window.Background>
         <ImageBrush ImageSource="C:\PC-DCS\BMP\1.bmp"/>
     </Window.Background>
