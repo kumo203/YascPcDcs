@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:YascPcDcsControls"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="100"
-             Background="Azure">
-    <Image Name="Image"></Image>
+             d:DesignHeight="20" d:DesignWidth="50">
+    <TextBlock Foreground="White" TextAlignment="Right" Name="TextBlock">0</TextBlock>
 </UserControl>
