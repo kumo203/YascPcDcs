@@ -63,11 +63,17 @@ namespace YascPcDcs
         private void TimerMethod(object sender, EventArgs e)
         {
             opc.Read(opcNames, out object[] oValueArray, out short[] wQualityArray, out FILETIME[] fTimeArray, out int[] nErrorArray);
-
             for (int i=0; i<opcNames.Length; i++)
             {
+#if DEBUG
                 Debug.WriteLine($"{opcNames[i]}::{oValueArray[i]}");
+#endif
+                foreach (var c in opcName2Controls[opcNames[i]])
+                {
+                    (c as PcDcsControl).OpcAnalogValue = Convert.ToInt32(oValueArray[i]);
+                } 
             }
+
         }
 
 
