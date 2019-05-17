@@ -29,7 +29,8 @@ namespace YascPcDcs
         DxpSimpleClass opc = new DxpSimpleClass();
         string opcHost = "localhost";
         DispatcherTimer timer;
-        List<string> OpcNames = new List<string>();
+        Dictionary<string, List<UserControl>> opcName2Controls = new Dictionary<string, List<UserControl>>();
+        string[] opcNames;
 
         public MainWindow()
         {
@@ -43,6 +44,7 @@ namespace YascPcDcs
             opc.Connect(opcHost, this.Title);
 
             GetChildrenControl(this);
+            opcNames = opcName2Controls.Keys.ToArray();
 
             SetupTimer();
         }
@@ -60,11 +62,11 @@ namespace YascPcDcs
 
         private void TimerMethod(object sender, EventArgs e)
         {
-            opc.Read(OpcNames.ToArray(), out object[] oValueArray, out short[] wQualityArray, out FILETIME[] fTimeArray, out int[] nErrorArray);
+            opc.Read(opcNames, out object[] oValueArray, out short[] wQualityArray, out FILETIME[] fTimeArray, out int[] nErrorArray);
 
-            foreach (var o in oValueArray)
+            for (int i=0; i<opcNames.Length; i++)
             {
-                Debug.WriteLine(o);
+                Debug.WriteLine($"{opcNames[i]}::{oValueArray[i]}");
             }
         }
 
@@ -89,7 +91,11 @@ namespace YascPcDcs
                 if (ctr != null)
                 {
                     Debug.WriteLine(ctr.OpcName);
-                    OpcNames.Add(ctr.OpcName);
+                    if ( opcName2Controls.Keys.Contains(ctr.OpcName) ) {
+                        opcName2Controls[ctr.OpcName].Add(ctr);
+                    } else {
+                        opcName2Controls.Add(ctr.OpcName, new List<UserControl>() { ctr });
+                    }
                 }
             }
         }

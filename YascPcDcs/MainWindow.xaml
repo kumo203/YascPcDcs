@@ -16,6 +16,6 @@
         <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="655" Width="100" OpcServerName="DEV1" OpcRegisterName="D2"/>
         <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="680" Width="100" OpcServerName="DEV1" OpcRegisterName="D3"/>
         <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="730" Width="100" OpcServerName="DEV1" OpcRegisterName="D4"/>
-        <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="757" Width="100" OpcServerName="DEV1" OpcRegisterName="D5"/>
+        <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="757" Width="100" OpcServerName="DEV1" OpcRegisterName="D0"/>
     </Canvas>
 </Window>
