@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,6 +45,11 @@ namespace YascPcDcsControls
 
     public class PcDcsAnalog : PcDcsBase
     {
+        virtual protected void PvUpdated()
+        {
+            Debug.WriteLine($"PcDcsAnalog::{OpcPV}");
+        }
+
         [Category("Opc")]
         [Description("OPC PV")]
         public int OpcPV
@@ -54,7 +60,14 @@ namespace YascPcDcsControls
 
         // Using a DependencyProperty as the backing store for OpcPV.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty OpcPVProperty =
-            DependencyProperty.Register("OpcPV", typeof(int), typeof(PcDcsAnalog), new PropertyMetadata(0));
+            DependencyProperty.Register("OpcPV", typeof(int), typeof(PcDcsAnalog), new PropertyMetadata(0, PvChanged));
+
+        static private void PvChanged(DependencyObject target,
+            DependencyPropertyChangedEventArgs e)
+        {
+            var ths = (target as PcDcsAnalog);
+            ths.PvUpdated();
+        }
 
         [Category("Opc")]
         [Description("OPC MV")]

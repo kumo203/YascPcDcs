@@ -71,7 +71,8 @@ namespace YascPcDcs
                 foreach (var c in opcName2Controls[opcNames[i]])
                 {
                     (c as PcDcsAnalogGauge).OpcAnalogValue = Convert.ToInt32(oValueArray[i]);
-                } 
+                    (c as PcDcsAnalogGauge).OpcPV = Convert.ToInt32(oValueArray[i]);
+                }
             }
 
         }

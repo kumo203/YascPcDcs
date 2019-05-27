@@ -5,6 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:YascPcDcsControls"
              mc:Ignorable="d" 
-             d:DesignHeight="20" d:DesignWidth="50">
+             d:DesignHeight="40" d:DesignWidth="50">
+    <StackPanel>
     <TextBlock Foreground="White" TextAlignment="Right" Name="TextBlock">0</TextBlock>
+    <TextBlock Foreground="White" TextAlignment="left" Name="TextBlock2">0</TextBlock>
+    </StackPanel>
 </local:PcDcsAnalog>

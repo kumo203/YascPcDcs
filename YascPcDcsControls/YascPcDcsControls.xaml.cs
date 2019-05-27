@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,12 @@ namespace YascPcDcsControls
         public PcDcsAnalogGauge()
         {
             InitializeComponent();
+        }
+
+        override protected void PvUpdated()
+        {
+            Debug.WriteLine($"PcDcsAnalogGauge::{OpcPV}");
+            this.TextBlock2.Text = this.OpcPV.ToString();
         }
 
         [Category("Opc")]
