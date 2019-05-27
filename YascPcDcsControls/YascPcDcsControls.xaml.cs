@@ -21,39 +21,9 @@ namespace YascPcDcsControls
     /// </summary>
     public partial class PcDcsAnalogGauge : PcDcsAnalog
     {
-        readonly string separator = ".";
-
         public PcDcsAnalogGauge()
         {
             InitializeComponent();
-        }
-
-        [Category("Opc")]
-        [Description("OPC Server Name")]
-        public string OpcServerName
-        {
-            get { return (string)GetValue(OpcServerNameProperty); }
-            set { SetValue(OpcServerNameProperty, value); }
-        }
-
-        public static readonly DependencyProperty OpcServerNameProperty =
-            DependencyProperty.Register("OpcServerName", typeof(string), typeof(PcDcsAnalogGauge), new PropertyMetadata(""));
-
-
-        [Category("Opc")]
-        [Description("OPC Register Name")]
-        public string OpcRegisterName
-        {
-            get { return (string)GetValue(OpcRegisterNameProperty); }
-            set { SetValue(OpcRegisterNameProperty, value); }
-        }
-
-        public static readonly DependencyProperty OpcRegisterNameProperty =
-            DependencyProperty.Register("OpcRegisterName", typeof(string), typeof(PcDcsAnalogGauge), new PropertyMetadata(""));
-
-        public string OpcName
-        {
-            get => OpcServerName + separator + OpcRegisterName;
         }
 
         [Category("Opc")]
