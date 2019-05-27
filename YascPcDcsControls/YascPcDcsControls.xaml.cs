@@ -17,13 +17,13 @@ using System.Windows.Shapes;
 namespace YascPcDcsControls
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for PcDcsAnalogGauge.xaml
     /// </summary>
-    public partial class PcDcsControl : UserControl
+    public partial class PcDcsAnalogGauge : PcDcsAnalog
     {
         readonly string separator = ".";
 
-        public PcDcsControl()
+        public PcDcsAnalogGauge()
         {
             InitializeComponent();
         }
@@ -37,7 +37,7 @@ namespace YascPcDcsControls
         }
 
         public static readonly DependencyProperty OpcServerNameProperty =
-            DependencyProperty.Register("OpcServerName", typeof(string), typeof(PcDcsControl), new PropertyMetadata(""));
+            DependencyProperty.Register("OpcServerName", typeof(string), typeof(PcDcsAnalogGauge), new PropertyMetadata(""));
 
 
         [Category("Opc")]
@@ -49,7 +49,7 @@ namespace YascPcDcsControls
         }
 
         public static readonly DependencyProperty OpcRegisterNameProperty =
-            DependencyProperty.Register("OpcRegisterName", typeof(string), typeof(PcDcsControl), new PropertyMetadata(""));
+            DependencyProperty.Register("OpcRegisterName", typeof(string), typeof(PcDcsAnalogGauge), new PropertyMetadata(""));
 
         public string OpcName
         {
@@ -66,12 +66,12 @@ namespace YascPcDcsControls
 
         // Using a DependencyProperty as the backing store for OpcAnalogValue.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty OpcAnalogValueProperty =
-            DependencyProperty.Register("OpcAnalogValue", typeof(int), typeof(PcDcsControl), new PropertyMetadata(0, ValueChanged));
+            DependencyProperty.Register("OpcAnalogValue", typeof(int), typeof(PcDcsAnalogGauge), new PropertyMetadata(0, ValueChanged));
 
         static private void ValueChanged(DependencyObject target,
             DependencyPropertyChangedEventArgs e)
         {
-            var ths = (target as PcDcsControl);
+            var ths = (target as PcDcsAnalogGauge);
             ths.TextBlock.Text = ths.OpcAnalogValue.ToString();
         }
 

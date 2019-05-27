@@ -11,11 +11,11 @@
         <ImageBrush ImageSource="C:\PC-DCS\BMP\1.bmp"/>
     </Window.Background>
     <Canvas>
-        <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="580" Width="100" OpcServerName="DEV1" OpcRegisterName="D0"/>
-        <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="608" Width="100" OpcServerName="DEV1" OpcRegisterName="D1"/>
-        <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="655" Width="100" OpcServerName="DEV1" OpcRegisterName="D2"/>
-        <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="680" Width="100" OpcServerName="DEV1" OpcRegisterName="D3"/>
-        <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="730" Width="100" OpcServerName="DEV1" OpcRegisterName="D4"/>
-        <YascPcDcsControls:PcDcsControl Height="20" Canvas.Left="10" Canvas.Top="757" Width="100" OpcServerName="DEV1" OpcRegisterName="D0"/>
+        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="10" Canvas.Top="580" Width="100" OpcServerName="DEV1" OpcRegisterName="D0"/>
+        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="10" Canvas.Top="608" Width="100" OpcServerName="DEV1" OpcRegisterName="D1"/>
+        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="10" Canvas.Top="655" Width="100" OpcServerName="DEV1" OpcRegisterName="D2"/>
+        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="10" Canvas.Top="680" Width="100" OpcServerName="DEV1" OpcRegisterName="D3"/>
+        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="10" Canvas.Top="730" Width="100" OpcServerName="DEV1" OpcRegisterName="D4"/>
+        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="10" Canvas.Top="757" Width="100" OpcServerName="DEV1" OpcRegisterName="D0"/>
     </Canvas>
 </Window>

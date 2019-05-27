@@ -70,7 +70,7 @@ namespace YascPcDcs
 #endif
                 foreach (var c in opcName2Controls[opcNames[i]])
                 {
-                    (c as PcDcsControl).OpcAnalogValue = Convert.ToInt32(oValueArray[i]);
+                    (c as PcDcsAnalogGauge).OpcAnalogValue = Convert.ToInt32(oValueArray[i]);
                 } 
             }
 
@@ -92,7 +92,7 @@ namespace YascPcDcs
             {
                 GetChildrenControl(c as FrameworkElement);
 
-                var ctr = c as PcDcsControl;
+                var ctr = c as PcDcsAnalogGauge;
 
                 if (ctr != null)
                 {
