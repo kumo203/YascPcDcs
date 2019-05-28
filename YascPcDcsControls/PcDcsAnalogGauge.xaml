@@ -6,7 +6,5 @@
              xmlns:local="clr-namespace:YascPcDcsControls"
              mc:Ignorable="d" 
              d:DesignHeight="40" d:DesignWidth="50">
-    <StackPanel>
     <TextBlock Foreground="White" TextAlignment="Right" Name="Gauge">0</TextBlock>
-    </StackPanel>
 </local:PcDcsAnalog>
