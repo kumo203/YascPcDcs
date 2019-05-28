@@ -30,27 +30,7 @@ namespace YascPcDcsControls
         override protected void PvUpdated()
         {
             Debug.WriteLine($"PcDcsAnalogGauge::{OpcPV}");
-            this.TextBlock2.Text = this.OpcPV.ToString();
+            this.Gauge.Text = this.OpcPV.ToString();
         }
-
-        [Category("Opc")]
-        [Description("OPC Analog Value")]
-        public int OpcAnalogValue
-        {
-            get { return (int)GetValue(OpcAnalogValueProperty); }
-            set { SetValue(OpcAnalogValueProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for OpcAnalogValue.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty OpcAnalogValueProperty =
-            DependencyProperty.Register("OpcAnalogValue", typeof(int), typeof(PcDcsAnalogGauge), new PropertyMetadata(0, ValueChanged));
-
-        static private void ValueChanged(DependencyObject target,
-            DependencyPropertyChangedEventArgs e)
-        {
-            var ths = (target as PcDcsAnalogGauge);
-            ths.TextBlock.Text = ths.OpcAnalogValue.ToString();
-        }
-
     }
 }

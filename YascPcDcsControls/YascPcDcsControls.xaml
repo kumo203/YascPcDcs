@@ -7,7 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="40" d:DesignWidth="50">
     <StackPanel>
-    <TextBlock Foreground="White" TextAlignment="Right" Name="TextBlock">0</TextBlock>
-    <TextBlock Foreground="White" TextAlignment="left" Name="TextBlock2">0</TextBlock>
+    <TextBlock Foreground="White" TextAlignment="Right" Name="Gauge">0</TextBlock>
     </StackPanel>
 </local:PcDcsAnalog>

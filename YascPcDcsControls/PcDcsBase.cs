@@ -49,6 +49,14 @@ namespace YascPcDcsControls
         {
             Debug.WriteLine($"PcDcsAnalog::{OpcPV}");
         }
+        virtual protected void SvUpdated()
+        {
+            Debug.WriteLine($"PcDcsAnalog::{OpcSV}");
+        }
+        virtual protected void MvUpdated()
+        {
+            Debug.WriteLine($"PcDcsAnalog::{OpcMV}");
+        }
 
         [Category("Opc")]
         [Description("OPC PV")]
@@ -66,7 +74,7 @@ namespace YascPcDcsControls
             DependencyPropertyChangedEventArgs e)
         {
             var ths = (target as PcDcsAnalog);
-            ths.PvUpdated();
+            ths?.PvUpdated();
         }
 
         [Category("Opc")]
@@ -79,7 +87,14 @@ namespace YascPcDcsControls
 
         // Using a DependencyProperty as the backing store for OpcMv.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty OpcMVProperty =
-            DependencyProperty.Register("OpcMV", typeof(int), typeof(PcDcsAnalog), new PropertyMetadata(0));
+            DependencyProperty.Register("OpcMV", typeof(int), typeof(PcDcsAnalog), new PropertyMetadata(0, MvChanged));
+
+        static private void MvChanged(DependencyObject target,
+            DependencyPropertyChangedEventArgs e)
+        {
+            var ths = (target as PcDcsAnalog);
+            ths?.MvUpdated();
+        }
 
         public int OpcSV
         {
@@ -89,7 +104,13 @@ namespace YascPcDcsControls
 
         // Using a DependencyProperty as the backing store for OpcSV.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty OpcSVProperty =
-            DependencyProperty.Register("OpcSV", typeof(int), typeof(PcDcsAnalog), new PropertyMetadata(0));
+            DependencyProperty.Register("OpcSV", typeof(int), typeof(PcDcsAnalog), new PropertyMetadata(0, SvChanged));
+        static private void SvChanged(DependencyObject target,
+        DependencyPropertyChangedEventArgs e)
+        {
+            var ths = (target as PcDcsAnalog);
+            ths?.SvUpdated();
+        }
     }
 
     public class PcDcsDigital : PcDcsBase
