@@ -69,7 +69,15 @@ namespace YascPcDcs
 #endif
                 foreach (var c in opcName2Controls[opcNames[i]])
                 {
-                    (c as PcDcsAnalogGauge).OpcPV = Convert.ToInt32(oValueArray[i]);
+                    if (c is PcDcsAnalog)
+                    {
+                        (c as PcDcsAnalog).OpcPV = Convert.ToInt32(oValueArray[i]);
+                    }
+
+                    if (c is PcDcsDigital)
+                    {
+                        (c as PcDcsDigital).OpcDi = Convert.ToInt32(oValueArray[i]);
+                    }
                 }
             }
 
@@ -91,7 +99,7 @@ namespace YascPcDcs
             {
                 GetChildrenControl(c as FrameworkElement);
 
-                var ctr = c as PcDcsAnalogGauge;
+                var ctr = c as PcDcsBase;
 
                 if (ctr != null)
                 {

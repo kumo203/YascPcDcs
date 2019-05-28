@@ -17,5 +17,8 @@
         <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="10" Canvas.Top="680" Width="100" OpcServerName="DEV1" OpcRegisterName="D3"/>
         <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="10" Canvas.Top="730" Width="100" OpcServerName="DEV1" OpcRegisterName="D4"/>
         <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="10" Canvas.Top="757" Width="100" OpcServerName="DEV1" OpcRegisterName="D0"/>
+        <YascPcDcsControls:PcDcsDiImage Height="20" Canvas.Left="235" Canvas.Top="810" Width="20" 
+                                        OffImagePath="C:\PC-DCS\BMP\Lamp_G.bmp" 
+                                        OnImagePath="C:\PC-DCS\BMP\Lamp_R.bmp" OpcRegisterName="L1" OpcServerName="DEV1"/>
     </Canvas>
 </Window>

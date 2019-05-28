@@ -106,7 +106,7 @@ namespace YascPcDcsControls
         public static readonly DependencyProperty OpcSVProperty =
             DependencyProperty.Register("OpcSV", typeof(int), typeof(PcDcsAnalog), new PropertyMetadata(0, SvChanged));
         static private void SvChanged(DependencyObject target,
-        DependencyPropertyChangedEventArgs e)
+            DependencyPropertyChangedEventArgs e)
         {
             var ths = (target as PcDcsAnalog);
             ths?.SvUpdated();
@@ -115,5 +115,27 @@ namespace YascPcDcsControls
 
     public class PcDcsDigital : PcDcsBase
     {
+        virtual protected void DiUpdated()
+        {
+            Debug.WriteLine($"PcDcsDigital::{OpcDi}");
+        }
+
+        public int OpcDi
+        {
+            get { return (int)GetValue(OpcDiProperty); }
+            set { SetValue(OpcDiProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for DI.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty OpcDiProperty =
+            DependencyProperty.Register("OpcDi", typeof(int), typeof(PcDcsDigital), new PropertyMetadata(0, DiChanged));
+
+        static private void DiChanged(DependencyObject target,
+            DependencyPropertyChangedEventArgs e)
+        {
+            var ths = (target as PcDcsDigital);
+            ths?.DiUpdated();
+        }
+
     }
 }
