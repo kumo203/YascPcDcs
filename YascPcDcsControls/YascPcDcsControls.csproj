@@ -48,17 +48,24 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="YascPcDcsControls.xaml">
+    <Page Include="PcDcsAnalogGauge.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="PcDcsBase.cs" />
-    <Compile Include="YascPcDcsControls.xaml.cs">
-      <DependentUpon>YascPcDcsControls.xaml</DependentUpon>
+    <Compile Include="PcDcsAnalogGauge.xaml.cs">
+      <DependentUpon>PcDcsAnalogGauge.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PcDcsDiImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PcDcsDiImage.xaml.cs">
+      <DependentUpon>PcDcsDiImage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
