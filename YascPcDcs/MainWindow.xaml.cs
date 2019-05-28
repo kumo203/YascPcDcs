@@ -40,8 +40,7 @@ namespace YascPcDcs
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             opc.EnumServerList(opcHost, out string[] ServerNameArray);
-            this.Title = ServerNameArray[0];
-            opc.Connect(opcHost, this.Title);
+            opc.Connect(opcHost, ServerNameArray[0]);   // Connecting to first OPC server candidate.
 
             GetChildrenControl(this);
             opcNames = opcName2Controls.Keys.ToArray();
