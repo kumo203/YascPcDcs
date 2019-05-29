@@ -10,15 +10,5 @@
     <Window.Background>
         <ImageBrush ImageSource="back.png"/>
     </Window.Background>
-    <Canvas>
-        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="580" Canvas.Top="527" Width="100" OpcServerName="DEV1" OpcRegisterName="D0"/>
-        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="580" Canvas.Top="552" Width="100" OpcServerName="DEV1" OpcRegisterName="D1"/>
-        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="580" Canvas.Top="599" Width="100" OpcServerName="DEV1" OpcRegisterName="D2"/>
-        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="580" Canvas.Top="624" Width="100" OpcServerName="DEV1" OpcRegisterName="D3"/>
-        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="580" Canvas.Top="674" Width="100" OpcServerName="DEV1" OpcRegisterName="D4"/>
-        <YascPcDcsControls:PcDcsAnalogGauge Height="20" Canvas.Left="580" Canvas.Top="701" Width="100" OpcServerName="DEV1" OpcRegisterName="D0"/>
-        <YascPcDcsControls:PcDcsDiImage Height="20" Canvas.Left="308" Canvas.Top="655" Width="20" 
-                                        OffImagePath="C:\PC-DCS\BMP\Lamp_G.bmp" 
-                                        OnImagePath="C:\PC-DCS\BMP\Lamp_R.bmp" OpcRegisterName="L1" OpcServerName="DEV1"/>
-    </Canvas>
+    <Canvas/>
 </Window>
