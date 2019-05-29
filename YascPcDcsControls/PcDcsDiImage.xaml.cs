@@ -29,31 +29,6 @@ namespace YascPcDcsControls
             InitializeComponent();
         }
 
-        [Category("Opc")]
-        [Description("On Image Path")]
-        public string OnImagePath
-        {
-            get { return (string)GetValue(OnImagePathProperty); }
-            set { SetValue(OnImagePathProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for OnImagePath.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty OnImagePathProperty =
-            DependencyProperty.Register("OnImagePath", typeof(string), typeof(PcDcsDiImage), new PropertyMetadata("")
-                );
-
-        [Category("Opc")]
-        [Description("Off Image Path")]
-        public string OffImagePath
-        {
-            get { return (string)GetValue(OffImagePathProperty); }
-            set { SetValue(OffImagePathProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for OffImagePath.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty OffImagePathProperty =
-            DependencyProperty.Register("OffImagePath", typeof(string), typeof(PcDcsDiImage), new PropertyMetadata(""));
-
         override protected void DiUpdated()
         {
             if (OpcDi==0)
@@ -67,14 +42,8 @@ namespace YascPcDcsControls
 
         private void PcDcsDigital_Loaded(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(OnImagePath))
-            {
-                OnImage = new BitmapImage(new Uri("On.png", UriKind.Relative));
-            }
-            if (!string.IsNullOrEmpty(OffImagePath))
-            {
-                OffImage = new BitmapImage(new Uri("Off.png", UriKind.Relative));
-            }
+            OnImage = new BitmapImage(new Uri("On.png", UriKind.Relative));
+            OffImage = new BitmapImage(new Uri("Off.png", UriKind.Relative));
             if (OpcDi == 0)
             {
                 Image.Source = OffImage;
