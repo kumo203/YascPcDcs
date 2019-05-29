@@ -33,10 +33,10 @@ namespace YascPcDcsControls
         {
             if (OpcDi==0)
             {
-                Image.Source = OnImage;
+                Image.Source = OffImage;
             } else
             {
-                Image.Source = OffImage;
+                Image.Source = OnImage;
             }
         }
 
