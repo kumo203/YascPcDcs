@@ -58,17 +58,9 @@ namespace YascPcDcsControls
         {
             if (OpcDi==0)
             {
-                if (OnImage == null)
-                {
-                    OnImage = new BitmapImage(new Uri(OnImagePath));
-                }
                 Image.Source = OnImage;
             } else
             {
-                if (OffImage == null)
-                {
-                    OffImage = new BitmapImage(new Uri(OffImagePath));
-                }
                 Image.Source = OffImage;
             }
         }
@@ -77,11 +69,11 @@ namespace YascPcDcsControls
         {
             if (!string.IsNullOrEmpty(OnImagePath))
             {
-                OnImage = new BitmapImage(new Uri(OnImagePath));
+                OnImage = new BitmapImage(new Uri("On.png", UriKind.Relative));
             }
             if (!string.IsNullOrEmpty(OffImagePath))
             {
-                OffImage = new BitmapImage(new Uri(OffImagePath));
+                OffImage = new BitmapImage(new Uri("Off.png", UriKind.Relative));
             }
             if (OpcDi == 0)
             {
