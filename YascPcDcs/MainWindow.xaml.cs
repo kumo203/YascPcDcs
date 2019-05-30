@@ -67,6 +67,11 @@ namespace YascPcDcs
 #if DEBUG
                 Debug.WriteLine($"{opcNames[i]}::{oValueArray[i]}");
 #endif
+                if (wQualityArray[i] != 0xC0)
+                {
+                    Debug.WriteLine($"i={i}::wQualityArray::{wQualityArray[i]}::nErrorArray{nErrorArray[i]}");
+                    continue;
+                }
                 foreach (var c in opcName2Controls[opcNames[i]])
                 {
                     if (c is PcDcsAnalog)
