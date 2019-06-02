@@ -35,10 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DxpSimpleAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\DxpSimpleAPI.dll</HintPath>
-    </Reference>
     <Reference Include="OpcRcw.Da, Version=3.0.2.22, Culture=neutral, PublicKeyToken=9a40e993cbface53">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -109,7 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="back.png" />
-    <Content Include="DxpSimpleAPI.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

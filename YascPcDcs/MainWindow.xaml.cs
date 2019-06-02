@@ -1,5 +1,4 @@
-﻿using DxpSimpleAPI;
-using OpcRcw.Da;
+﻿using OpcRcw.Da;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +25,7 @@ namespace YascPcDcs
     /// </summary>
     public partial class MainWindow : Window
     {
-        DxpSimpleClass opc = new DxpSimpleClass();
+        YascPcDcsControls.DxpSimpleClass opc = new YascPcDcsControls.DxpSimpleClass();
         string opcHost = "localhost";
         DispatcherTimer timer;
         Dictionary<string, List<UserControl>> opcName2Controls = new Dictionary<string, List<UserControl>>();
