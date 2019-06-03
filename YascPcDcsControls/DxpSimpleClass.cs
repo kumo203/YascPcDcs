@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Diagnostics;
 
 namespace YascPcDcsControls
 {
@@ -64,8 +65,11 @@ namespace YascPcDcsControls
                 }
                 result = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+#if DEBUG
+                Debug.WriteLine(ex);
+#endif
                 sServerNameArray = new string[1];
                 sServerNameArray[0] = "";
                 result = false;
@@ -98,8 +102,11 @@ namespace YascPcDcsControls
                     result = false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+#if DEBUG
+                Debug.WriteLine(ex);
+#endif
                 result = false;
             }
             finally
@@ -159,8 +166,11 @@ namespace YascPcDcsControls
                 Marshal.FreeCoTaskMem(intPtr2);
                 result = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+#if DEBUG
+                Debug.WriteLine(ex);
+#endif
                 result = false;
             }
             return result;
@@ -189,8 +199,11 @@ namespace YascPcDcsControls
                 Marshal.FreeCoTaskMem(intPtr);
                 result = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+#if DEBUG
+                Debug.WriteLine(ex);
+#endif
                 result = false;
             }
             return result;
@@ -230,8 +243,11 @@ namespace YascPcDcsControls
                 this.m_bConnect = false;
                 result = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+#if DEBUG
+                Debug.WriteLine(ex);
+#endif
                 this.m_bConnect = false;
                 result = false;
             }
@@ -250,8 +266,11 @@ namespace YascPcDcsControls
                 DxpSimpleClass.SERVERPARAM[] serverParam = this.GetServerParam(iopcserverList, clsid_DA_, out nServerCnt);
                 result = serverParam;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+#if DEBUG
+                Debug.WriteLine(ex);
+#endif
                 result = null;
             }
             finally
@@ -314,8 +333,11 @@ namespace YascPcDcsControls
                 coserverinfo.pwszName = hostName;
                 DxpSimpleClass.CoCreateInstanceEx(ref clsid, null, clsctx_ALL, ref coserverinfo, 1u, array);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+#if DEBUG
+                Debug.WriteLine(ex);
+#endif
                 return null;
             }
             gchandle.Free();
