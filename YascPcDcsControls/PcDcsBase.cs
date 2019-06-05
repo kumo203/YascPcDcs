@@ -10,6 +10,10 @@ using System.Windows.Controls;
 
 namespace YascPcDcsControls
 {
+    public class OpcWindow : Window
+    {
+        public YascPcDcsControls.DxpSimpleClass opc = new YascPcDcsControls.DxpSimpleClass();
+    }
     public class PcDcsBase : UserControl
     {
         readonly string separator = ".";

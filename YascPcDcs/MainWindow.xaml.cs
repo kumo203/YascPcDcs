@@ -23,9 +23,8 @@ namespace YascPcDcs
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : OpcWindow
     {
-        YascPcDcsControls.DxpSimpleClass opc = new YascPcDcsControls.DxpSimpleClass();
         string opcHost = "localhost";
         DispatcherTimer timer;
         Dictionary<string, List<UserControl>> opcName2Controls = new Dictionary<string, List<UserControl>>();
@@ -121,6 +120,5 @@ namespace YascPcDcs
         {
             opc.Disconnect();
         }
-
     }
 }

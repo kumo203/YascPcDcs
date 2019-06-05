@@ -1,4 +1,4 @@
-﻿<Window
+﻿<YascPcDcsControls:OpcWindow
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -11,6 +11,5 @@
         <ImageBrush ImageSource="back.png"/>
     </Window.Background>
     <Canvas>
-        <YascPcDcsControls:PcDcsDiImage Height="100" Canvas.Left="488" Canvas.Top="522" Width="100" OpcServerName="DEV1" OpcRegisterName="L1"/>
     </Canvas>
-</Window>
+</YascPcDcsControls:OpcWindow>

@@ -53,5 +53,19 @@ namespace YascPcDcsControls
                 Image.Source = OnImage;
             }
         }
+
+        private void PcDcsDigital_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            OpcWindow w;
+            var p = this.Parent;
+            w = p as OpcWindow;
+            while (w == null)
+            {
+                p = VisualTreeHelper.GetParent(p);
+                w = p as OpcWindow;
+            }
+
+            w.opc.Write( new string[] { this.OpcName }, new object[] { (this.OpcDi+1)%2 }, out int[] error);
+        }
     }
 }
